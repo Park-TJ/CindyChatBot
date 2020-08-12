@@ -37,6 +37,8 @@ ETRI 의 [한국어 BERT 모델](http://aiopen.etri.re.kr/)을 활용하시려�
 
 Pretrained model for NER_classification:
 
+monologg님의 kobert-pretrained 모델을 사용하였고 tokenizer의 경우 [sentencepiece](https://github.com/google/sentencepiece)를 사용하였습니다.
+
 ## 실행방법
 ./seq2seq/seq2seq_chatbot_Learning.py 실행 - 대화형 데이터 학습 및 가중치 저장
 
