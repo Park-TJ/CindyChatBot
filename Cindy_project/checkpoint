@@ -1,0 +1,2 @@
+model_checkpoint_path: "seq2seq2_decoder_model_weights"
+all_model_checkpoint_paths: "seq2seq2_decoder_model_weights"
