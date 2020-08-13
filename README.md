@@ -5,6 +5,8 @@
 # 실행화면 
 #### pyqt_UI_run.py 실행
 <div>
+  <span width='350'>1</span>
+  <span width='350'>2</span>
   <img width='350', src="https://user-images.githubusercontent.com/63779100/89993048-1ce83400-dcc1-11ea-85dc-49d396530f88.gif">
   <img width='350', src="https://user-images.githubusercontent.com/63779100/89993364-8cf6ba00-dcc1-11ea-96e5-23bba4c2669a.gif">
  </div>
