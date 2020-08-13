@@ -30,10 +30,10 @@ class KoBertTokenizer(PreTrainedTokenizer):
 
     PRETRAINED_VOCAB_FILES_MAP = {
         "vocab_file": {
-            "monologg/kobert": "C:/Users/admin/PycharmProjects/new_seq/ner/vocab/tokenizer_78b3253a26.model",
+            "monologg/kobert": "./ner/vocab/tokenizer_78b3253a26.model",
         },
         "vocab_txt": {
-            "monologg/kobert": "C:/Users/admin/PycharmProjects/new_seq/ner/vocab/vocab.txt",
+            "monologg/kobert": "./ner/vocab/vocab.txt",
         }
     }
 
@@ -237,9 +237,9 @@ class NER:
         self.tokenizer = KoBertTokenizer.from_pretrained('monologg/kobert')
         self.SEQ_LEN = 72
         self.w_type = 1
-        with gzip.open('C:/Users/admin/PycharmProjects/new_seq/ner/pickle/label_dict.pickle', 'rb') as f:
+        with gzip.open('./ner/pickle/label_dict.pickle', 'rb') as f:
             self.label_dict = pickle.load(f)
-        with gzip.open('C:/Users/admin/PycharmProjects/new_seq/ner/pickle/index_to_ner.pickle', 'rb') as f:
+        with gzip.open('./ner/pickle/index_to_ner.pickle', 'rb') as f:
             self.index_to_ner = pickle.load(f)
 
         self.news_date_tags = []
@@ -272,8 +272,8 @@ class NER:
                               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
                               metrics=['sparse_categorical_accuracy'])
         self.nr_model.summary()
-
-        self.nr_model.load_weights('C:/Users/admin/PycharmProjects/new_seq/ner/model/ner_final_model.h5')
+        # 자신의환경에 맞게 경로를 수정하셔야 합니다.
+        self.nr_model.load_weights('./ner/model/ner_class_model_weight.h5')
         return self.nr_model
 
     # 입력된 질문에 대해서 라벨과 토큰으로 분류해주는 함수 선언
@@ -463,7 +463,7 @@ class NER:
             options.add_argument('window-size=1920x1080')
             options.add_argument("disable-gpu")
             # 혹은 options.add_argument("--disable-gpu")
-            driver = wd.Chrome('C:/Users/admin/PycharmProjects/new_seq/ner/driver/chromedriver.exe', options=options)
+            driver = wd.Chrome('./ner/driver/chromedriver.exe', options=options)
 
             driver.get(url)
             soup = bs4.BeautifulSoup(driver.page_source, 'html.parser')
@@ -519,7 +519,9 @@ class NER:
                 'user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36')
 
             # 혹은 options.add_argument("--disable-gpu")
-            driver = wd.Chrome('C:/Users/admin/PycharmProjects/new_seq/ner/driver/chromedriver.exe', options=options)
+            # colab에서 사용시 kora.selenium를 사용하셔도 됩니다.
+            # 자신의 크롬드라이브 경로에 따라 경로를 변경해주시면됩니다.
+            driver = wd.Chrome('./ner/driver/chromedriver.exe', options=options)
             driver.implicitly_wait(20)
             driver.get('https://map.kakao.com/')
 

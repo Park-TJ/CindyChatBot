@@ -15,10 +15,12 @@ from transformers import PreTrainedTokenizer
 from sklearn.metrics import precision_score, recall_score, f1_score, classification_report
 
 # 데이터셋 로드
-train = pd.read_csv('/content/MyDrive/My Drive/Colab Data/ner_dataset(LOC update).csv',index_col=0)
-weather = pd.read_csv('/content/MyDrive/My Drive/Colab Data/ner_weather.csv',index_col=0)
-news = pd.read_csv('/content/MyDrive/My Drive/Colab Data/ner_news.csv', index_col=0)
-food = pd.read_csv('/content/MyDrive/My Drive/Colab Data/ner_food.csv',index_col=0)
+# 자신의환경에 맞게 경로를 수정하셔야 합니다.
+# base dataset 참조 ( https://github.com/naver/nlp-challenge/ )
+train = pd.read_csv('./dataset/Colab Data/ner_dataset(LOC update).csv',index_col=0)
+weather = pd.read_csv('./dataset/ner_weather.csv',index_col=0)
+news = pd.read_csv('./dataset/ner_news.csv', index_col=0)
+food = pd.read_csv('./dataset/ner_food.csv',index_col=0)
 train = pd.concat([train,weather,news,food])
 
 # 데이터를 전처리
@@ -40,9 +42,9 @@ label_dict.update({"[PAD]":len(label_dict)})
 index_to_ner = {i:j for j, i in label_dict.items()}
 
 # 생성한 사전 pickle로 저장
-with gzip.open('/content/MyDrive/My Drive/bert/vocab/label_dict.pickle', 'wb') as f:
+with gzip.open('./vocab/label_dict.pickle', 'wb') as f:
     pickle.dump(label_dict, f)
-with gzip.open('/content/MyDrive/My Drive/bert/vocab/index_to_ner.pickle', 'wb') as f:
+with gzip.open('./vocab/index_to_ner.pickle', 'wb') as f:
     pickle.dump(index_to_ner, f)
 
 # 데이터를 문장들과 개체들로 분리
@@ -83,10 +85,10 @@ VOCAB_FILES_NAMES = {"vocab_file": "tokenizer_78b3253a26.model",
                      "vocab_txt": "vocab.txt"}
 PRETRAINED_VOCAB_FILES_MAP = {
     "vocab_file": {
-        "monologg/kobert": "/content/MyDrive/My Drive/bert/vocab/tokenizer_78b3253a26.model",
+        "monologg/kobert": "./vocab/tokenizer_78b3253a26.model",
     },
     "vocab_txt": {
-        "monologg/kobert": "/content/MyDrive/My Drive/bert/vocab/vocab.txt",
+        "monologg/kobert": "./vocab/vocab.txt",
     }
 }
 PRETRAINED_POSITIONAL_EMBEDDINGS_SIZES = {
@@ -379,7 +381,8 @@ nr_model = create_model()
 nr_model.fit([tr_inputs, tr_masks], tr_tags, validation_data=([val_inputs, val_masks], val_tags), epochs=3, shuffle=False, batch_size=bs)
 
 # 모델 가중치 저장
-nr_model.save_weights('/content/MyDrive/My Drive/bert/model/ner_model_add_weather.h5')
+# 자신의환경에 맞게 경로를 수정하셔야 합니다.
+nr_model.save_weights('./model/ner_class_model_weight.h5')
 
 # 예측 결과 확인
 y_predicted = nr_model.predict([val_inputs, val_masks])
