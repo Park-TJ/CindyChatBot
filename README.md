@@ -8,13 +8,14 @@
    <td rowspan='2'>model</td>
    <td rowspan='2'>accuracy</td>
    <td rowspan='2'>loss</td>
-   <td colspan='4'></td>
+   <td colspan='4'>Hyperparameters</td>
   </tr>
   <tr>
-   <td>model</td>
-   <td>accuracy</td>
-   <td>loss</td>
+   <td>batchsize</td>
+   <td>lr</td>
+   <td>epoch</td>
    <td>학습시간</td>
+   <
   </tr>
   <tr>
    <td>1</td>
