@@ -5,12 +5,22 @@
 <div>
  <table border='1'>
   <tr>
+   <td rowspan='2'>model</td>
+   <td rowspan='2'>accuracy</td>
+   <td rowspan='2'>loss</td>
+   <td colspan='4'></td>
+  </tr>
+  <tr>
    <td>model</td>
    <td>accuracy</td>
    <td>loss</td>
    <td>학습시간</td>
   </tr>
   <tr>
+   <td>1</td>
+   <td>2</td>
+   <td>3</td>
+   <td>4</td>
    <td>1</td>
    <td>2</td>
    <td>3</td>
