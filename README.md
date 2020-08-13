@@ -14,19 +14,13 @@
  </div>
 
 # Requirements
-Python==3.6.10
-
-tensorflow==2.1.0
-
-torch==1.5.1+cu101
-
-PyQt5==5.15.0
-
-bert-for-tf2==0.14.4
-
-konlpy==0.5.2
-
-Keras==2.4.3
+Python==3.6.10  
+tensorflow==2.1.0  
+torch==1.5.1+cu101  
+PyQt5==5.15.0  
+bert-for-tf2==0.14.4  
+konlpy==0.5.2  
+Keras==2.4.3  
 
 Pretrained model for intent_classification :
 keras_bert, 
