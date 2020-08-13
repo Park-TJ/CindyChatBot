@@ -37,7 +37,7 @@ ETRI 의 [한국어 BERT 모델](http://aiopen.etri.re.kr/)을 활용하시려�
 (사용 허가 협약서를 준수하기 때문에 pretrained 모델을 공개하지 않습니다.**)
 
 Pretrained model for NER_classification:
-Tokenizer - [SentencePiece](https://github.com/google/sentencepiece)
+Tokenizer - [SentencePiece](https://github.com/google/sentencepiece)  
 Model - monologg님의 kobert를 활용하여 진행하였습니다.
 
 # 실행방법(수정 예정) ->ner, intent learning 코드파일 추가
