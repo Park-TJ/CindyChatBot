@@ -2,6 +2,19 @@
 #### * 나만의 비서 Cindy는 ETRI Korbert(Google bert모델기반) 와 Seq2Seq model을 기반으로 한 자연어처리 대화형 챗봇입니다.
 #### * 뉴스, 날씨, 맛집, 버스에 대한 질문이 가능하며, 일상대화도 가능합니다
 
+<div>
+ <table border='1'>
+  <tr>
+   <td>1</td>
+   <td>2</td>
+  </tr>
+  <tr>
+   <td>3</td>
+   <td>4</td>
+  </tr>
+ </table>
+</div>
+
 # 실행화면 
 #### pyqt_UI_run.py 실행
  <div>
