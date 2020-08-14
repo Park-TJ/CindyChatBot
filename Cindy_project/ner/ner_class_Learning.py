@@ -423,8 +423,9 @@ def ner_inference(test_sentence):
 
 # 예시
 ner_inference('7월 둘째주 날씨 알려줄수있어?')
-# 결과
+# 결과 예시
 # DAT_B	7월
 # DAT_I	둘째주
 # WTH_B	날씨
 # -	알려줄수있어?
+# 질의 문장의 각 개체에 대해 태깅이 되는 모습입니다.
