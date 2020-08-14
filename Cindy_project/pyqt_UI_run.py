@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from seq2seq.Seq2Seq_model_class import seq2seq
 from ner import ner_class
-from intent_data.intent_cl import Intent_model
+from Intent_cl.intent_cl import Intent_model
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
